@@ -25,6 +25,7 @@
     <!--Produk template & keranjang template-->
     <produk :products="products"  @add-to-cart="tambahKeranjang" v-if="!cartClicked"></produk>
     <keranjang :products="products" :cart="cart" v-if="cartClicked" :></keranjang>   
+    
     <comingsoon v-if="!cartClicked"></comingsoon>
     
     <footer-template></footer-template>
