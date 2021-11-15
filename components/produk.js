@@ -1,4 +1,5 @@
 app.component('produk', {
+    // menerima data dari parent
     props:['products'],
     template: 
     /*html*/
@@ -28,6 +29,7 @@ app.component('produk', {
             hasil = hasil.join('.').split('').reverse().join('');
             return hasil
         },
+        // hapus produk
         hapus(kode){
             for (let i =0; i < this.products.length; i++)
                 if (this.products[i].id === kode) {
@@ -36,6 +38,7 @@ app.component('produk', {
             }
 
         },
+        //melempar id produk ke parent
         tambahKeranjang(kode){
             this.$emit('add-to-cart', kode)
         }   

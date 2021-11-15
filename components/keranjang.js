@@ -1,4 +1,5 @@
 app.component('keranjang', {
+    // menerima data dari parent
     props:['products','cart'],
     template: 
     /*html*/
@@ -26,14 +27,7 @@ app.component('keranjang', {
             hasil = hasil.join('.').split('').reverse().join('');
             return hasil
         },
-        hapus(kode){
-            for (let i =0; i < this.products.length; i++)
-                if (this.products[i].id === kode) {
-                    this.products.splice(i,1);
-                    break;
-            }
-
-        },
+        //hitung data sama yang ada di keranjang
         hitungCart(key, keranjang){
             let length = 0
             for(let i=0;i<keranjang.length;i++) {
@@ -43,6 +37,7 @@ app.component('keranjang', {
             }
             return length;
         },
+        // Hapus data yang ada di keranjang
         deleteCart(key, keranjang){
             for(let i=0;i<keranjang.length;i++) {
                 if(keranjang[i] === key) {
